@@ -1,5 +1,21 @@
 public class validAnagram {
-    public boolean isAnagram(String s, String t) {
+
+    public boolean isAnagram1(String s, String t) { // Sorting approach
+        if (s.length() != t.length()) {
+            return false;
+        }
+
+        char[] sArray = s.toCharArray();
+        char[] tArray = t.toCharArray();
+
+        java.util.Arrays.sort(sArray);
+        java.util.Arrays.sort(tArray);
+
+        return java.util.Arrays.equals(sArray, tArray);
+    }
+
+
+    public boolean isAnagram2(String s, String t) {
         if (s.length() != t.length()) {
             return false;
         }
@@ -16,7 +32,6 @@ public class validAnagram {
                 return false;
             }
         }
-
         return true;
     }
 }
